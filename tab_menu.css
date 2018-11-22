@@ -1,0 +1,41 @@
+#Home {
+  
+    background-image:url("hand.jpg"); 
+    /*opacity: 0.5;*/
+    background-blend-mode: lighten;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+
+#Stories {background-color: lavender;
+           font-family: Times New Roman;
+    color: black;
+           }
+#SignUp {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+#Login {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+#AboutUs {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+#investment {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+#stocks {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+    #Trade {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+
+
+ #Note {background-color:lavender;
+font-family: Arial, Helvetica,sans-serif;
+    color: black;}
+ 
