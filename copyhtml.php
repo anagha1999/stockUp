@@ -2,11 +2,11 @@
 // Initialize the session
 session_start();
  
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-}
+//Check if the user is logged in, if not then redirect him to login page
+//if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    //header("location: copyhtml.php");
+    //exit;
+//}
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ body, html {
     cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
-    width: 16.66%;
+    width: 12.5%;
     height: 5%
 }
 
@@ -192,8 +192,8 @@ document.getElementById("defaultOpen").click();
 <script type="text/javascript">openPage('Home', this,'orange');</script>
 <button class="tablink" onclick="openPage('Home', this,'orange')">Home</button>
 <button class="tablink" onclick="openPage('Stories', this, 'orange')" id="defaultOpen">Stories</button>
-<!--<button class="tablink" onclick="openPage('SignUp', this, 'orange')">SignUp</button>
-<button class="tablink" onclick="openPage('Login', this, 'orange')">Login</button>--->
+<button class="tablink" onclick="openPage('SignUp', this, 'orange')">SignUp</button>
+<button class="tablink" onclick="openPage('Login', this, 'orange')">Login</button>
 <button class="tablink" onclick="openPage('AboutUs', this, 'orange')">About Us</button>
 <button class="tablink" onclick="openPage('investment', this, 'orange')">How to Invest?</button>
 <button class="tablink" onclick="openPage('Trade', this, 'orange')">Trade Tricks</button>
@@ -202,9 +202,12 @@ document.getElementById("defaultOpen").click();
 
 
 <div id="Home" class="tabcontent">
-<h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+<h1>Hi, <b><?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
+        echo htmlspecialchars($_SESSION["username"]);
+        else echo ""; ?></b> Welcome to our site.</h1>
 
-    <p>
+
+    <p id = "access">
         <a href="reset-password.php" class="button_reset">Reset Your Password</a>
         <a href="logout.php" class="button_signout">Sign Out of Your Account</a>
     </p>
@@ -246,60 +249,20 @@ document.getElementById("defaultOpen").click();
 </div>
 </div>
 
-<!---<div id="SignUp" class="tabcontent">
+<div id="SignUp" class="tabcontent">
  
-  <form action="/action_page.php" >
   <div class="container">
-    <h1 style="color: black">Sign Up</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr> 
-
-    <label for="email"><b>Email</b></label><br>
-    <input type="text" placeholder="Enter Email" name="email" required> <br>
-
-    <label for="psw"><b>Password</b></label><br>
-    <input type="password" placeholder="Enter Password" name="psw" required><br>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label> <br>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required> <br>
+  <h1 style="color: black"> <a href = "register.php">Sign Up</a> </h1>
     
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-  	</div>
-	</form>
-
+</div>
 </div>
 
 <div id="Login" class="tabcontent">
-  <h1 align="center" style="color: black">Login </h1>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label> <br>
-    <input type="text" placeholder="Enter Username" name="uname" required> <br>
-
-    <label for="psw"><b>Password</b></label> <br>
-    <input type="password" placeholder="Enter Password" name="psw" required> <br>
-        
-    <button type="submit">Login</button> <br>
-    <label>
-    <input type="checkbox" checked="checked" name="remember" style="color: black">Remember me
-    </label> <br>
-     </div>
-
-     <div class="container">
-    <button type="button" class="cancelbtn">Cancel</button> <br>
-    <span class="psw">Forgot <a href="#">password?</a></span> <br>
-     </div>
-     </form>
-</div>---->
+  <div class = "container">
+ <h1> <a href = "login.php"> Login </a></h1>
+  
+</div>
+</div>
 
 <div id="AboutUs" class="tabcontent">
 	<div class="row">
@@ -463,9 +426,9 @@ document.getElementById("defaultOpen").click();
   <li><p>If you decide to go for a broker, always choose a trusted one. We’ve compiled a list of great online brokers for you!</p></li>
   <li><p>Make sure you set a few small term goals and a few long terms one, so you keep track of your investments along the way!</p></li>
   <li><p>Determine your risk appetite, if you’re not ready to put a month’s salary into a stock you’re not completely sure of, that’s okay and if you are, heer’s hoping it triples!</p></li>
-  <li><p> 6)  Remember to be realistic about the results, don’t expect magical results overnight, an investment in the stock market can some times take just as long as any other investment. </p></li>
-  <li><p> 7)  Be prepared for losing money in the beginning. A lot of investors learn as they experience the stock market, don’t be demotivated by losses in the beginning.</p></li>
-  <li><p>8) Don’t buy or sell stock because someone you don’t know has decided to drop you a tip, you never know how useful it can be. Go with your gut, or better yet, read articles by financial gurus to be prepared for the investing season and helpful tips.</p></li>
+  <li><p>Remember to be realistic about the results, don’t expect magical results overnight, an investment in the stock market can some times take just as long as any other investment. </p></li>
+  <li><p>Be prepared for losing money in the beginning. A lot of investors learn as they experience the stock market, don’t be demotivated by losses in the beginning.</p></li>
+  <li><p>Don’t buy or sell stock because someone you don’t know has decided to drop you a tip, you never know how useful it can be. Go with your gut, or better yet, read articles by financial gurus to be prepared for the investing season and helpful tips.</p></li>
 </ul>
 </div>
 

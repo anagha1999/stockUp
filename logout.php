@@ -9,6 +9,15 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to login page
-header("location: login.php");
-exit;
+//header("location: login.php");
+//exit;
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1> You've been logged out. Continue browsing our <a href= "copyhtml.php">website</a></h1>
+  </body>
+    </html>
