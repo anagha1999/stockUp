@@ -1,3 +1,1 @@
-# $tockUp
-To begin exploring $tockUp, open 'register.php' <br>
-WebTech project by Aishwarya, Anagha and Sharanya
+# To begin exploring $tockUp, open 'register.php' in your browser
