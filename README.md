@@ -11,7 +11,8 @@
   <br> <br>
 2. To create the database, run config.php on your browser <br> <br>
 3. To begin exploring $tockUp, open 'register.php' on your browser <br> <br> <br>
-Contributors: <br>
+
+**Contributors:** <br>
 Aishwarya: PES1201700872 <br>
 Anagha: PES1201700301 <br>
 Sharanya: PES1201700218
